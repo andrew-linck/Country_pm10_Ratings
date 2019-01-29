@@ -5,5 +5,16 @@ const getAQ = function(countryCode){
     method: 'GET'
   }).then(function(response) {
     console.log(response);
+    getAverage(response);
   })
+}
+
+const getAverage = function (response) {
+  let pm10Avg = 0;
+  for(let i = 0; i < response.results.length; i++)
+  {
+    pm10Avg += response.results[i].measurements[0].value;
+  }
+  pm10Avg /= response.results.length;
+  console.log(pm10Avg);
 }

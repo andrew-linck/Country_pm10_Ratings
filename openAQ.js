@@ -1,5 +1,5 @@
 const getAQ = function(countryCode){
-  const queryURL = `https://api.openaq.org/v1/latest?country=${countryCode}`;
+  const queryURL = `https://api.openaq.org/v1/latest?country=${countryCode}&parameter=pm10`;
   $.ajax({
     url: queryURL,
     method: 'GET'
